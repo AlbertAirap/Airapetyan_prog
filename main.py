@@ -40,11 +40,8 @@ def show_event(event):
             label3.grid(row=4+i*3, column=4, padx=10, pady=10)
             frames.append(frame)
 
-events = {
-    "Экскурсионный Тур": ["Экскурсия1  3000 руб", "Экскурсия2 10000 руб", "Экскурсия3 9999 руб"],
-    "Билет в музей": ["Музей1 5 руб", "Музей2 99 руб", "Музей3 777 руб"],
-    "Билет в поход": ["Поход1 2000 руб", "Поход2 6000 руб", "Поход3 666 руб"]
-    }
+
+events = ["Экскурсионный Тур", "Билет в музей", "Билет в поход"]
 
 frames = []
 
@@ -54,7 +51,7 @@ window.title("Магазин билетов")
 event_label = tk.Label(window, text="Выберите тип события:")
 event_label.grid(row=0, column=0)
 event_var = tk.StringVar(value="Выберите событие")
-event_menu = tk.OptionMenu(window, event_var, *events.keys(), command=show_event)
+event_menu = tk.OptionMenu(window, event_var, *events, command=show_event)
 event_menu.grid(row=1, column=0)
 
 
